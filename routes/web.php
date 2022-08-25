@@ -1,5 +1,6 @@
 <?php
 
+use App\Models\Category;
 use App\Models\Post;
 use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Route;
@@ -18,7 +19,7 @@ use Spatie\YamlFrontMatter\YamlFrontMatter;
 
 Route::get('/', function () {
     return view('posts', [
-        'posts' => Post::all()->sortByDesc('created_at')
+        'posts' => Post::with('category')->get()
     ]);
 });
 
@@ -28,6 +29,24 @@ Route::get('posts/{post:slug}', function (Post $post) {
     ]);
 });
 
-Route::get('/test', function () {
-    return view('test');
+Route::get('categories/{category}', function (Category $category) {
+   return view('posts', [
+       'posts' => $category->posts
+   ]);
 });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
