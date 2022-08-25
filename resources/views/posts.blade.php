@@ -1,20 +1,15 @@
-<!doctype html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>My Blog</title>
-    <link rel="stylesheet" href="{{ asset('app.css') }}">
-</head>
-<body>
-
+<x-layout>
     @foreach ($posts as $post)
         <article>
-            {!! $post !!}
+            <h1>
+                <a href="/posts/{{ $post->id }}">
+                    {{ $post->title }}
+                </a>
+            </h1>
+
+            <div>
+                {{ $post->excerpt }}
+            </div>
         </article>
     @endforeach
-
-</body>
-</html>
+</x-layout>

@@ -1,12 +1,6 @@
-@extends('layout')
-
-@section('content')
-
-    <h2>This is a title.</h2>
-
-    <p>
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid, atque dolores necessitatibus non numquam rem sequi soluta totam! Ab ad, adipisci amet aspernatur atque autem debitis dignissimos est et eveniet exercitationem fuga iste libero minima nesciunt nostrum perferendis quae quasi repellat repellendus soluta tempore ullam. Ab accusamus, accusantium aperiam at blanditiis deleniti distinctio ducimus earum excepturi incidunt inventore ipsa iure labore laboriosam natus, neque nesciunt porro quae quas ratione reprehenderit sit soluta sunt tenetur vel veniam voluptas voluptatum? Asperiores commodi dicta, doloribus iste nobis tenetur voluptatibus? Dignissimos distinctio doloremque dolores dolorum, et eveniet explicabo facere fugiat illo illum incidunt inventore ipsam laborum laudantium maxime mollitia necessitatibus neque nisi nobis quae quidem recusandae reiciendis repudiandae, velit veniam vero vitae. Asperiores eius error iusto nam necessitatibus nesciunt numquam omnis sequi ullam vero. Accusantium atque commodi consequatur, corporis dicta distinctio doloremque, dolorum est eveniet excepturi id illum iure laudantium maxime modi molestiae obcaecati odio placeat porro quam quas qui, repellat saepe sequi sit sunt suscipit ullam unde velit voluptate. Aperiam asperiores assumenda aut consectetur cupiditate doloremque eveniet excepturi fuga illo ipsam laborum libero molestias necessitatibus officia qui ratione sed, temporibus? Animi placeat quibusdam repellat. Ad, aliquam aut deserunt distinctio doloremque ducimus eum eveniet libero nostrum odio pariatur qui quibusdam quis saepe sed tempora vero. Accusamus, adipisci alias architecto autem blanditiis corporis cumque, debitis dolores enim et excepturi facilis illo ipsum maiores minima nam neque provident reprehenderit soluta tempora velit voluptate voluptatem voluptatum. Fuga iure porro rem sint! Asperiores at cumque dolorem esse minus molestiae nam, nobis, optio similique ullam vero voluptate voluptatibus! Adipisci at beatae deserunt dolorum facilis inventore labore magni repudiandae tenetur voluptatibus. Accusantium aliquid, aut corporis deleniti dicta eaque fugiat harum hic in inventore laudantium magnam molestiae officia, officiis omnis quibusdam quidem reprehenderit temporibus ullam voluptate? Doloremque eaque praesentium quisquam rerum.
-    </p>
-
-
-@endsection
+<x-layout>
+    <header>
+        I am a header.
+    </header>
+</x-layout>
+666666666666
