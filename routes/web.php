@@ -16,17 +16,17 @@ use Spatie\YamlFrontMatter\YamlFrontMatter;
 |
 */
 
-Route::get('/posts', function () {
+Route::get('/', function () {
     return view('posts', [
-        'posts' => Post::all()
+        'posts' => Post::all()->sortByDesc('created_at')
     ]);
 });
 
-Route::get('posts/{post} ', function ($id) {
+Route::get('posts/{post}', function ($id) {
     return view('post', [
         'post' => Post::find($id)
     ]);
-})->where('post', '[A-z_\-]+');
+});
 
 Route::get('/test', function () {
     return view('test');
