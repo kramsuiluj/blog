@@ -19,11 +19,19 @@ use Spatie\YamlFrontMatter\YamlFrontMatter;
 */
 
 Route::get('/', function () {
+    $posts = Post::latest();
+
+    if (request('search')) {
+        $posts
+            ->where('title', 'like', '%' . request('search') . '%')
+            ->orWhere('body', 'like', '%' . request('search') . '%');
+    }
+
     return view('posts', [
-        'posts' => Post::latest()->get(),
+        'posts' => $posts->get(),
         'categories' => Category::all()
     ]);
-});
+})->name('home');
 
 Route::get('posts/{post:slug}', function (Post $post) {
     return view('post', [
@@ -32,18 +40,18 @@ Route::get('posts/{post:slug}', function (Post $post) {
 });
 
 Route::get('categories/{category}', function (Category $category) {
-   return view('posts', [
-       'posts' => $category->posts,
-       'currentCategory' => $category,
-       'categories' => Category::all()
-   ]);
+    return view('posts', [
+        'posts' => $category->posts,
+        'currentCategory' => $category,
+        'categories' => Category::all()
+    ]);
 });
 
 Route::get('/authors/{author}', function (User $author) {
-   return view('posts', [
-       'posts' => $author->posts,
-       'categories' => Category::all()
-   ]);
+    return view('posts', [
+        'posts' => $author->posts,
+        'categories' => Category::all()
+    ]);
 });
 
 
