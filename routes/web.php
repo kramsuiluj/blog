@@ -17,6 +17,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+
 Route::get('/', [PostController::class, 'index'])->name('home');
 Route::get('/posts/{post:slug}', [PostController::class, 'show']);
 Route::post('/posts/{post:slug}/comments', [PostCommentsController::class, 'store']);
@@ -32,8 +33,10 @@ Route::group(['middleware' => 'auth'], function () {
     Route::post('/logout', [SessionController::class, 'destroy']);
 });
 
-//Route::get('/test', [TestController::class, 'index']);
-
+Route::group(['middleware' => 'admin'], function () {
+    Route::get('admin/posts/create', [PostController::class, 'create']);
+    Route::post('admin/posts', [PostController::class, 'store']);
+});
 
 
 
